@@ -6,5 +6,9 @@
     <p><%= e %></p>
 <% end %>
 
+<%# 调用Helper %>
+<p><%= say_hi("Tony") %></p>
+
+<%# 调用Partial %>
 <%= render :partial => 'div' %>
 <%= render :partial => 'footer', :locals => { year: 2024 } %>
