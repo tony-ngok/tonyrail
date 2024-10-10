@@ -5,3 +5,6 @@
 <% [0, 1, 2, 3].each do |e| %>
     <p><%= e %></p>
 <% end %>
+
+<%= render :partial => 'div' %>
+<%= render :partial => 'footer', :locals => { year: 2024 } %>
