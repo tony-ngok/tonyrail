@@ -10,3 +10,6 @@ class ChangeTypes < ActiveRecord::Migration[7.2]
     rename_column :apohealth, :weight, :weight_g
   end
 end
+
+# 运行rails db:migrate时，Rails会自动检测尚未执行的迁移脚本并依次（按照时间戳的顺序）执行它们。
+# 故不需要为每个迁移脚本单独运行rails db:migrate：只需执行一次这个命令，所有待迁移的脚本都会按照创建的时间顺序执行。
