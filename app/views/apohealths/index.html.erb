@@ -1,26 +1,17 @@
-<h1>Apohealth药品</h1>
+<h1>德国Apohealth药局TonyRail分局</h1>
 
 <table>
     <tr>
-        <th>更新时间</th>
-        <th>URL</th>
-        <th>商品号</th>
-        <th>存在？</th>
         <th>商品名</th>
-        <th>描述</th>
-        <th>SKU</th>
-        <th>品牌</th>
-        <th>类型</th>
+        <th>存在？</th>
         <th>价格（€）</th>
-        <th>重量（g）</th>
+        <th>详细</th>
     </tr>
 
     <%# 从数据库中逐条生成要素 %>
     <% @apohealths.each do |apohealth| %>
         <tr>
-            <td><%= apohealth.updated_at %></td>
-            <td><%= apohealth.url %></td>
-            <td><%= apohealth.product_id %></td>
+            <td><%= apohealth.title %></td>
 
             <% if apohealth.existence == true %>
                 <td>是</td>
@@ -28,20 +19,12 @@
                 <td>否</td>
             <% end %>
 
-            <td><%= apohealth.title %></td>
-            <td><%= apohealth.description %></td>
-            <td><%= apohealth.sku %></td>
-            <td><%= apohealth.brand %></td>
-            <td><%= apohealth.category %></td>
             <td><%= apohealth.price_eu %></td>
-            <td><%= apohealth.weight_g %></td>
+            <td>
+                <a href="<%= "/apohealths/#{apohealth.id}" %>">详细</a>
+            </td>
         </tr>
     <% end %>
 </table>
 
-<style>
-    table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-</style>
+<%= render :partial => 'style' %>

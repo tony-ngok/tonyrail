@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
+  # 路由（router）：每个路由都会对应一个视图（view）
   resources :time
   resources :apohealths
 end

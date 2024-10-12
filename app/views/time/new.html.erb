@@ -9,6 +9,6 @@
 <%# 调用Helper %>
 <p><%= say_hi("Tony") %></p>
 
-<%# 调用Partial %>
+<%# 调用Partial：将其中的HTML直接插入此处 %>
 <%= render :partial => 'div' %>
 <%= render :partial => 'footer', :locals => { year: 2024 } %>

@@ -1,0 +1,67 @@
+<h3>商品数据</h3>
+
+<table>
+    <tr>
+        <th>更新时间</th>
+        <td><%= @record.updated_at %></td>
+    </tr>
+
+    <tr>
+        <th>原始URL</th>
+        <td><%= @record.url %></td>
+    </tr>
+
+    <tr>
+        <th>商品号</th>
+        <td><%= @record.product_id %></td>
+    </tr>
+
+    <tr>
+        <th>商品名</th>
+        <td><%= @record.title %></td>
+    </tr>
+
+    <tr>
+        <th>存在？</th>
+
+        <% if @record.existence == true %>
+            <td>是</td>
+        <% else %>
+            <td>否</td>
+        <% end %>
+    </tr>
+
+    <tr>
+        <th>价格（€）</th>
+        <td><%= @record.price_eu%></td>
+    </tr>
+
+    <tr>
+        <th>描述</th>
+        <td><%= @record.description %></td>
+    </tr>
+
+    <tr>
+        <th>SKU</th>
+        <td><%= @record.sku %></td>
+    </tr>
+
+    <tr>
+        <th>品牌</th>
+        <td><%= @record.brand %></td>
+    </tr>
+
+    <tr>
+        <th>类型</th>
+        <td><%= @record.category %></td>
+    </tr>
+
+    <tr>
+        <th>质量（g）</th>
+        <td><%= @record.weight_g %></td>
+    </tr>
+</table>
+
+<%= render :partial => 'style' %>
+
+<a href="/apohealths">返回首页</a>
