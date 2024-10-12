@@ -1,4 +1,4 @@
-<h3>商品数据</h3>
+<h1>商品数据</h1>
 
 <table>
     <tr>
@@ -64,4 +64,5 @@
 
 <%= render :partial => 'style' %>
 
-<a href="/apohealths">返回首页</a>
+<%# apohealths_path：GET /apohealths 方法对应的URL名字 %>
+<%= link_to('返回首页', apohealths_path) %>

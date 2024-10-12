@@ -21,10 +21,14 @@
 
             <td><%= apohealth.price_eu %></td>
             <td>
-                <a href="<%= "/apohealths/#{apohealth.id}" %>">详细</a>
+                <%# apohealths_path(id)：GET /apohealths/id 方法对应的URL名字 %>
+                <%= link_to '察看详细', apohealth_path(apohealth.id) %>
             </td>
         </tr>
     <% end %>
 </table>
 
 <%= render :partial => 'style' %>
+
+<%# new_apohealth_path：POST /apohealths 方法对应的URL名字 %>
+<%= link_to('创建新数据', new_apohealth_path) %>

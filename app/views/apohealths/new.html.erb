@@ -1,0 +1,26 @@
+<h1>创建新数据</h1>
+
+<%= form_with(model: @apohealth, local: true) do |form| %>
+    <div>
+        <div>原始URL</div>
+        <%= form.text_field :url %>
+
+        <div>商品号</div>
+        <%= form.text_field :title %>
+
+        <div>商品名</div>
+        <%= form.text_field :title %>
+
+        <div>价格（€）</div>
+        <%= form.text_field :title %>
+
+        <div>描述</div>
+        <%= form.text_area :title %>
+
+        <div>SKU</div>
+        <%= form.text_field :title %>
+    </div>
+<% end %>
+
+<%# 返回到 GET /apohealths %>
+<%= link_to('返回首页', apohealths_path) %>
