@@ -1,25 +1,39 @@
 <h1>创建新数据</h1>
 
-<%= form_with(model: @apohealth, local: true) do |form| %>
-    <div>
-        <div>原始URL</div>
-        <%= form.text_field :url %>
+<%# 表单即参数列表 %>
+<%= form_for(@apohealth) do |form| %>
+    <%# 对应控制器中params[:url] %>
+    <div><%= form.label(:url, '原始URL') %></div>
+    <%= form.text_field(:url) %>
 
-        <div>商品号</div>
-        <%= form.text_field :title %>
+    <div><%= form.label(:product_id, '商品号') %></div>
+    <%= form.text_field(:product_id) %>
 
-        <div>商品名</div>
-        <%= form.text_field :title %>
+    <div><%= form.label(:title, '商品名') %></div>
+    <%= form.text_field(:title) %>
 
-        <div>价格（€）</div>
-        <%= form.text_field :title %>
+    <div><%= form.label(:existence, "存在？") %></div>
+    <%= form.select_tag(:existence, options_for_select(['是', '否'])) %>
 
-        <div>描述</div>
-        <%= form.text_area :title %>
+    <div><%= form.label(:price_eu, '价格（€）') %></div>
+    <%= form.text_field(:price_eu) %>
 
-        <div>SKU</div>
-        <%= form.text_field :title %>
-    </div>
+    <div><%= form.label(:description, '描述') %></div>
+    <%= form.text_area(:description) %>
+
+    <div><%= form.label(:sku, 'SKU') %></div>
+    <%= form.text_field(:sku) %>
+
+    <div><%= form.label(:brand, '品牌') %></div>
+    <%= form.text_field(:brand) %>
+
+    <div><%= form.label(:category, 'category') %></div>
+    <%= form.text_field(:category) %>
+
+    <div><%= form.label(:weight_g, '质量（g）') %></div>
+    <%= form.text_field(:weight_g) %>
+
+    <%= form.submit %>
 <% end %>
 
 <%# 返回到 GET /apohealths %>

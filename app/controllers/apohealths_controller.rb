@@ -3,12 +3,27 @@
 
 class ApohealthsController < ApplicationController
   # 增
-  def new # GET /apohealths/new（展现创建项目的页面）
-    @apohealth = Apohealth.new
-  end
+  # def new # GET /apohealths/new（展现创建项目的页面）
+  #   @apohealth = Apohealth.new
+  # end
 
-  def create # POST /apohealths?各种参数
-    @apohealth = Apohealth.new(post_params)
+  def create # POST /apohealths 加上各种参数
+    @apohealth = Apohealth.new
+  
+    @apohealth.url = params[:url]
+    @apohealth.product_id = params[:product_id]
+
+    if params[:existence] == '是'
+      @apohealth.existence = true
+    else
+      @apohealth.existence = false
+    end
+
+    # @apohealth
+
+    @apohealth.title = params[:title]
+
+    @apohealth.save
   end
 
   # 删
@@ -19,7 +34,8 @@ class ApohealthsController < ApplicationController
 
   # 查
   def index # GET /apohealths（查询所有数据）
-    @apohealths = Apohealth.all # 调用查询所有数据
+    # Apohealth：模型（Model），映射到apohealths表
+    @apohealths = Apohealth.all # 调用数据持久层，转换为SQL以查询所有数据
   end
 
   def show # GET /apohealths/id（查询某个id的数据）

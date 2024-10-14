@@ -5,13 +5,15 @@
         <th>商品名</th>
         <th>存在？</th>
         <th>价格（€）</th>
-        <th>详细</th>
     </tr>
 
     <%# 从数据库中逐条生成要素 %>
     <% @apohealths.each do |apohealth| %>
         <tr>
-            <td><%= apohealth.title %></td>
+            <td>
+                <%# apohealths_path(id)：GET /apohealths/id 方法对应的URL名字 %>
+                <%= link_to(apohealth.title, apohealth_path(apohealth.id)) %>
+            </td>
 
             <% if apohealth.existence == true %>
                 <td>是</td>
@@ -20,10 +22,6 @@
             <% end %>
 
             <td><%= apohealth.price_eu %></td>
-            <td>
-                <%# apohealths_path(id)：GET /apohealths/id 方法对应的URL名字 %>
-                <%= link_to '察看详细', apohealth_path(apohealth.id) %>
-            </td>
         </tr>
     <% end %>
 </table>
